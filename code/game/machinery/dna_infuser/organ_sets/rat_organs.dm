@@ -61,6 +61,7 @@
 	post_init_icon_state = "heart"
 	greyscale_config = /datum/greyscale_config/mutant_organ
 	greyscale_colors = RAT_COLORS
+	beat_noise = "a fast-paced high-pitched pit-pat"
 
 /obj/item/organ/heart/rat/Initialize(mapload)
 	. = ..()
@@ -117,11 +118,11 @@
 
 /obj/item/organ/tongue/rat/on_mob_insert(mob/living/carbon/tongue_owner, special, movement_flags)
 	. = ..()
-	RegisterSignal(tongue_owner, COMSIG_CARBON_ITEM_GIVEN, PROC_REF(its_on_the_mouse))
+	RegisterSignal(tongue_owner, COMSIG_LIVING_ITEM_GIVEN, PROC_REF(its_on_the_mouse))
 
 /obj/item/organ/tongue/rat/on_mob_remove(mob/living/carbon/tongue_owner)
 	. = ..()
-	UnregisterSignal(tongue_owner, COMSIG_CARBON_ITEM_GIVEN)
+	UnregisterSignal(tongue_owner, COMSIG_LIVING_ITEM_GIVEN)
 
 /obj/item/organ/tongue/rat/proc/on_item_given(mob/living/carbon/offerer, mob/living/taker, obj/item/given)
 	SIGNAL_HANDLER
