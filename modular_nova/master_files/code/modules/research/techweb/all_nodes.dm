@@ -58,30 +58,20 @@
 		"synth_heart",
 	)
 
-/datum/techweb_node/ammobench_more
-	id = TECHWEB_NODE_AMMOBENCH_MORE
-	display_name = "Ammunition Bench Authentication Protocols"
-	description = "Turns out it's really easy to flash fabrication module reauthentication firmware onto blank circuits."
-	design_ids = list(
-		"ammobench_reauth",
-	)
-	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = TECHWEB_TIER_1_POINTS)
-	hidden = TRUE
-	experimental = TRUE
-	announce_channels = list(RADIO_CHANNEL_SECURITY, RADIO_CHANNEL_SUPPLY)
-
 // MODULAR ADDITIONS AND REMOVALS
 
 //Base Nodes
 /datum/techweb_node/atmos/New()
 	design_ids += list(
 		"vox_gas_filter",
+		"vaporizer",
 	)
 	return ..()
 
 /datum/techweb_node/construction/New()
 	design_ids += list(
 		"polarizer",
+		"airbag",
 	)
 	return ..()
 
@@ -327,6 +317,7 @@
 		"borg_upgrade_clamp",
 		"borg_upgrade_brush",
 		"borg_upgrade_shrink",
+		"borg_upgrade_cargo_apparatus"
 	)
 	return ..()
 
