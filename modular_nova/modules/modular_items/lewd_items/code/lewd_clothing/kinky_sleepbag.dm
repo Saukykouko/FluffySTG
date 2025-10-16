@@ -11,6 +11,7 @@
 	icon_state = "sleepbag_pink_deflated_folded"
 	base_icon_state = "sleepbag"
 	w_class = WEIGHT_CLASS_SMALL
+	obj_flags_nova = ERP_ITEM
 	var/bag_state = "deflated"
 	var/bag_fold = TRUE
 	var/bag_color = "pink"
@@ -66,7 +67,7 @@
 
 		if(TRUE)
 			if(bag_state == "deflated")
-				fold()
+				fold(user)
 				to_chat(user, span_notice("The sleeping bag now is [bag_fold? "folded." : "unfolded."]"))
 				update_icon()
 				update_icon_state()
