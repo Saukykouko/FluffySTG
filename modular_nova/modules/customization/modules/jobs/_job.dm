@@ -16,8 +16,8 @@
 	/// Which languages does the job require, associative to LANGUAGE_UNDERSTOOD or LANGUAGE_SPOKEN
 	var/list/required_languages = list(/datum/language/common = LANGUAGE_UNDERSTOOD)
 
-	///Is this job veteran only? If so, then this job requires the player to be in the veteran_players.txt
-	var/veteran_only = FALSE
+	///Is this job just for nova stars? If so, then this job requires the player to be in the nova_star_players.txt
+	var/nova_stars_only = FALSE
 
 
 /datum/job/proc/has_banned_quirk(datum/preferences/pref)
@@ -31,13 +31,14 @@
 					return TRUE
 	return FALSE
 
-/datum/job/proc/has_banned_species(datum/preferences/pref)
-	var/species_type = pref.read_preference(/datum/preference/choiced/species)
-	var/datum/species/species = new species_type
-	var/my_id = species.id
-	if(species_whitelist && !species_whitelist[my_id])
+/datum/job/proc/has_banned_species(datum/preferences/pref, species_id)
+	var/my_id = species_id
+	if(isnull(species_id))
+		var/datum/species/species = pref.read_preference(/datum/preference/choiced/species)
+		my_id = species::id
+	if(species_whitelist && isnull(species_whitelist[my_id]))
 		return TRUE
-	else if(!(my_id in get_selectable_species()))
+	else if(isnull(GLOB.roundstart_races[my_id]))
 		return TRUE
 	if(species_blacklist && species_blacklist[my_id])
 		return TRUE

@@ -1,6 +1,6 @@
 // Just keeping this easy to maintain in the future.
-#define JOB_NOT_VETERAN (JOB_UNAVAILABLE_AGE + 1)
-#define JOB_UNAVAILABLE_QUIRK (JOB_NOT_VETERAN + 1)
+#define JOB_NOT_NOVA_STAR (JOB_UNAVAILABLE_AGE + 1)
+#define JOB_UNAVAILABLE_QUIRK (JOB_NOT_NOVA_STAR + 1)
 #define JOB_UNAVAILABLE_SPECIES (JOB_UNAVAILABLE_QUIRK + 1)
 #define JOB_UNAVAILABLE_LANGUAGE (JOB_UNAVAILABLE_SPECIES + 1)
 #define JOB_UNAVAILABLE_FLAVOUR (JOB_UNAVAILABLE_LANGUAGE + 1)
@@ -54,7 +54,7 @@
 	/obj/item/mod/control/pre_equipped/magnate, \
 	/obj/item/mod/control/pre_equipped/blueshield, \
 	/obj/item/clothing/suit/armor/vest/warden, \
-	/obj/item/clothing/gloves/krav_maga/sec, \
+	/obj/item/clothing/gloves/kaza_ruk/sec, \
 	/obj/item/clothing/suit/armor/vest/alt/sec, \
 	/obj/item/storage/belt/holster/detective/full, \
 	/obj/item/detective_scanner, \
